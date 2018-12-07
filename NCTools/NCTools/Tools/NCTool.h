@@ -15,6 +15,12 @@ typedef enum : NSUInteger {
 } WD_NetworkStatus;
 NS_ASSUME_NONNULL_BEGIN
 
+
+/**
+ you might monitor NetworkingStatusChangedNotification in order to networking change notification
+ */
+#define NetworkingStatusChangedNotification (@"NetworkingStatusChangedNotification")
+
 @protocol NCToolDelegate <NSObject>
 
 @optional

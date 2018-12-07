@@ -58,7 +58,8 @@
         return;
     }
     if ([self.delegate respondsToSelector:@selector(ncToolDelegateCurrentNewStatus:)]) {
-            [self.delegate ncToolDelegateCurrentNewStatus:(WD_NetworkStatus)statu];
+        [self.delegate ncToolDelegateCurrentNewStatus:(WD_NetworkStatus)statu];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NetworkingStatusChangedNotification object:@((WD_NetworkStatus)statu)];
     }
     switch (statu) {
         case NotReachable:              //no networking
